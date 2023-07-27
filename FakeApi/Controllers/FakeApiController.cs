@@ -86,15 +86,16 @@ namespace FakeApi.Controllers
         #endregion
 
         [HttpPost("{id:int}")]
-        public IActionResult GetOneComments(int id)
+        public IActionResult GetPostIdComments(int id)
         {
             using (var client = new HttpClient())
             {
-                var endpoint = new Uri($"https://jsonplaceholder.typicode.com/comments/{id}");
+                var endpoint = new Uri($"https://jsonplaceholder.typicode.com/comments?postId={id}");
 
                 var result = client.GetAsync(endpoint).Result.Content.ReadAsStringAsync().Result;
 
                 return Ok(result);
+
             }
         }
     }
