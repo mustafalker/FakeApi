@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeApi", "FakeApi\FakeApi.csproj", "{953C63F2-BE76-4550-A495-FDD955EAC251}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{953C63F2-BE76-4550-A495-FDD955EAC251}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{953C63F2-BE76-4550-A495-FDD955EAC251}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{953C63F2-BE76-4550-A495-FDD955EAC251}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{953C63F2-BE76-4550-A495-FDD955EAC251}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78A49D7A-BE2D-41F6-AD75-8C6DAD7DF912}
+	EndGlobalSection
+EndGlobal
