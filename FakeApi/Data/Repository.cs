@@ -3,29 +3,20 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FakeApi.Data
 {
-    public class Repository : DbContext 
+    public class Repository : DbContext
     {
-        public static List<User> Users {  get; set; }
-        static Repository() 
-        {
-            Users = new List<User>()
-            {
-                
-            };
-        }
+        public Repository(DbContextOptions<Repository> options) : base(options){}
+
+        public DbSet<User> Users { get; set; } 
         
 
-    }
-    public class Repo : DbContext 
-    {
-        public static List<Comment> Comments { get; set; }
-        static Repo()
-        {
-            Comments = new List<Comment>()
-            {
 
-            };
-        }
+    }
+    public class Repo : DbContext
+    {
+        public Repo(DbContextOptions<Repository> options) : base(options) { }
+
+        public DbSet<Comment> Comments { get; set; }
     }
 
 }
