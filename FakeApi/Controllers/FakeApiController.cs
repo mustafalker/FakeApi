@@ -13,6 +13,7 @@ namespace FakeApi.Controllers
 {
     [Route("typicode.com")]
     [ApiController]
+
     public class FakeApiController : Controller
     {
         [HttpGet("typicode.com/posts")]
@@ -62,28 +63,6 @@ namespace FakeApi.Controllers
 
             }
         }
-
-        #region Yanlış
-        //[HttpGet(("{id:int}"))]
-        //public IActionResult GetOneComments(int id)
-        //{
-        //    using (var client = new HttpClient())
-        //    {
-        //        var endpoint = new Uri("https://jsonplaceholder.typicode.com/comments?postId=1");
-
-        //        var newPost = new Model.Comment();
-
-        //        var newPostJson = JsonConvert.SerializeObject(newPost);
-
-        //        var payload = new StringContent(newPostJson, Encoding.UTF8, "application/json");
-
-        //        var result = client.PostAsync(endpoint, payload).Result.Content.ReadAsStringAsync().Result;
-
-        //        return Ok(result);
-
-        //    }
-        //} 
-        #endregion
 
         [HttpPost("{id:int}")]
         public IActionResult GetPostIdComments(int id)

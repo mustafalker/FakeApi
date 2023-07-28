@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
+using FakeApi.Controllers;
 
 namespace FakeApi.Model
 {
@@ -10,7 +11,7 @@ namespace FakeApi.Model
         public string Body { get; set; }
         public int UserId { get; set; }
     }
-    public class Comment
+    public class Comment : DbContext
     {
         public int postId { get; set; }
         public int id { get; set; }
