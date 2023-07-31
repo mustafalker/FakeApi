@@ -1,6 +1,5 @@
 ﻿namespace FakeApi.Migrations
 {
-    using Microsoft.EntityFrameworkCore.Infrastructure;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -11,11 +10,6 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-        }
-
-        internal static Action<SqlServerDbContextOptionsBuilder>? GetConnectionString(string v)
-        {
-            throw new NotImplementedException();
         }
 
         protected override void Seed(FakeApi.Model.FakeApiDbContext context)

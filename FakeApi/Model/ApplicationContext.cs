@@ -23,7 +23,7 @@ namespace FakeApi.Model
     {
 
         public DbSet<User> Users { get; set; }
-
+        
         public DbSet<Comment> Comments { get; set; }
     }
 

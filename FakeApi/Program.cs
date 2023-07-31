@@ -13,13 +13,13 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
     try
     {
-        //builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer
-        //(builder.Configuration.GetConnectionString("sqlConnection")));
-            
-        builder.Services.AddDbContext<ApplicationDbContext>(options =>
-        options.UseSqlServer(builder.Configuration.GetConnectionString("sqlConnection"),
-        sqlServerOptions => sqlServerOptions.EnableRetryOnFailure(maxRetryCount: 5, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null)));
-    }
+    builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer
+    (builder.Configuration.GetConnectionString("sqlConnection")));
+
+    //builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    //options.UseSqlServer(builder.Configuration.GetConnectionString("sqlConnection"),
+    //sqlServerOptions => sqlServerOptions.EnableRetryOnFailure(maxRetryCount: 5, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null)));
+}
     catch (Exception ex)
     {
         Console.WriteLine("Db Patladý");
