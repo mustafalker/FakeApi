@@ -5,7 +5,7 @@ using FakeApi.Controllers;
 namespace FakeApi.Model
 {
 
-    public class User
+    public class User : DbContext
     {
         public string Title { get; set; }
         public string Body { get; set; }

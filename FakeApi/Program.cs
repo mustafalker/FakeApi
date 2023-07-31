@@ -1,19 +1,17 @@
 using FakeApi.Data;
 using Microsoft.EntityFrameworkCore;
-using System.Drawing.Printing;
-using System.Linq;
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+
+
 builder.Services.AddControllers();
-
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer
-(builder.Configuration.GetConnectionString("sqlConnection")));
-
-
-builder.Services.AddMvc();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
@@ -21,7 +19,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(); 
 }
 
 app.UseHttpsRedirection();
@@ -32,3 +30,5 @@ app.MapControllers();
 
 app.Run();
 
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("sqlConnection")));

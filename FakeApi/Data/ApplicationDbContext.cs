@@ -10,16 +10,16 @@ namespace FakeApi.Data
 
         public DbSet<User> Users { get; set; }
     }
-    public class Repo : DbContext
-    {
-        public Repo(DbContextOptions<ApplicationDbContext> options) : base(options) { }
-
-        public DbSet<Comment> Comments { get; set; }
-    }
     public class Repository : DbContext
     {
-        public Repository(DbContextOptions<ApplicationDbContext> options) : base(options) { }
+        public Repository(DbContextOptions<Repository> options) : base(options) { }
 
         public DbSet<User> Users { get; set; }
+    }
+    public class Repo : DbContext
+    {
+        public Repo(DbContextOptions<Repo> options) : base(options) { }
+
+        public DbSet<Comment> Comments { get; set; }
     }
 }

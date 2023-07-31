@@ -36,5 +36,5 @@ namespace MyNamespace
             return Ok();
         }
     }
-    
+
 }
