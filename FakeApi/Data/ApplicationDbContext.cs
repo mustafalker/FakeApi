@@ -22,17 +22,4 @@ namespace FakeApi.Data
         public virtual DbSet<User> Users { get; set; }
 
     }
-    //Alltaki kod satırları yanlış , program connection stringi hangi DbContext sınıfına bağlayacağını karıştırıyordu . Altakkiler ile yolumuzu ayırdık .
-    //public class Repository : DbContext
-    //{
-    //    public Repository(DbContextOptions<Repository> options) : base(options) { }
-
-    //    public DbSet<User> Users { get; set; }
-    //}
-    //public class Repo : DbContext
-    //{
-    //    public Repo(DbContextOptions<Repo> options) : base(options) { }
-
-    //    public DbSet<Comment> Comments { get; set; }
-    //}
 }

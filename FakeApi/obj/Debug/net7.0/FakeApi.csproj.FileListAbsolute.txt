@@ -98,5 +98,5 @@ C:\Users\mustafa.ulker\Desktop\Mustafa\ASP .net core API\FakeApi\FakeApi\bin\Deb
 C:\Users\mustafa.ulker\Desktop\Mustafa\ASP .net core API\FakeApi\FakeApi\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\mustafa.ulker\Desktop\Mustafa\ASP .net core API\FakeApi\FakeApi\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\mustafa.ulker\Desktop\Mustafa\ASP .net core API\FakeApi\FakeApi\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
-C:\Users\mustafa.ulker\Desktop\Mustafa\ASP .net core API\FakeApi\FakeApi\obj\Debug\net7.0\FakeApi.Migrations.Demo10.resources
+C:\Users\mustafa.ulker\Desktop\Mustafa\ASP .net core API\FakeApi\FakeApi\obj\Debug\net7.0\FakeApi.Migrations.Demo14.resources
 C:\Users\mustafa.ulker\Desktop\Mustafa\ASP .net core API\FakeApi\FakeApi\obj\Debug\net7.0\FakeApi.csproj.GenerateResource.cache

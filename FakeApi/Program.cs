@@ -19,7 +19,7 @@ builder.Services.AddSwaggerGen();
     //builder.Services.AddDbContext<ApplicationDbContext>(options =>
     //options.UseSqlServer(builder.Configuration.GetConnectionString("sqlConnection"),
     //sqlServerOptions => sqlServerOptions.EnableRetryOnFailure(maxRetryCount: 5, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null)));
-}
+    }
     catch (Exception ex)
     {
         Console.WriteLine("Db Patladý");
@@ -34,6 +34,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(); 
 }
 
+app.UseHttpsRedirection();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
