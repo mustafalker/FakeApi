@@ -11,71 +11,66 @@ using Newtonsoft.Json;
 
 namespace FakeApi.Controllers
 {
-    [Route("typicode.com")]
     [ApiController]
-
-    public class FakeApiController : Controller
+    [Route("api/[controller]")]
+    public class FakeApiControllers : ControllerBase
     {
         [HttpGet("typicode.com/posts")]
-        public IActionResult Index()
+        public IActionResult GetPosts()
         {
-            using (var client = new HttpClient())
-            {
-                var endpoint = new Uri("https://jsonplaceholder.typicode.com/posts");
+            var apiClient = ApiClient.Instance;
 
-                var result = client.GetAsync(endpoint).Result;
+            var endpoint = Apiucu.apiUcuPost;
 
-                var json = result.Content.ReadAsStringAsync().Result;
+            var response = apiClient.GetResponse(endpoint);
 
-                return Ok(json);
-            }
+            var json = response.Content.ReadAsStringAsync().Result;
+
+            return Ok(json);
         }
-        [HttpGet("{id:int}")]
-        public IActionResult GetOneUser([FromRoute(Name = "id")] int id)
-        {
-            using (var client = new HttpClient())
-            {
-                var endpoint = new Uri("https://jsonplaceholder.typicode.com/posts");
 
-                var newPost = new Model.User();
-
-                var newPostJson = JsonConvert.SerializeObject(newPost);
-
-                var payload = new StringContent(newPostJson, Encoding.UTF8, "application/json");
-
-                var result = client.PostAsync(endpoint, payload).Result.Content.ReadAsStringAsync().Result;
-
-                return Ok(result);
-            }
-        }
         [HttpGet("typicode.com/comments")]
         public IActionResult GetAllComments()
         {
-            using (var client = new HttpClient())
-            {
-                var endpoint = new Uri("https://jsonplaceholder.typicode.com/comments");
+            var apiClient = ApiClient.Instance;
 
-                var result = client.GetAsync(endpoint).Result;
+            var endpoint = Apiucu.apiUcuComment;
 
-                var json = result.Content.ReadAsStringAsync().Result;
+            var response = apiClient.GetResponse(endpoint);
 
-                return Ok(json);
+            var json = response.Content.ReadAsStringAsync().Result;
 
-            }
+            return Ok(json);
+        }
+
+        [HttpGet("{id:int}")]
+        public IActionResult GetOneUser(int id)
+        {
+            var apiClient = ApiClient.Instance;
+
+            var endpoint = Apiucu.apiUcuPost;
+
+            var newPost = new Model.User();
+
+            var response = apiClient.PostResponse(endpoint, newPost);
+
+            var result = response.Content.ReadAsStringAsync().Result;
+
+            return Ok(result);
         }
 
         [HttpPost("{id:int}")]
         public IActionResult GetPostIdComments(int id)
         {
-            using (var client = new HttpClient())
-            {
-                var endpoint = new Uri($"https://jsonplaceholder.typicode.com/comments?postId={id}");
+            var apiClient = ApiClient.Instance;
 
-                var result = client.GetAsync(endpoint).Result.Content.ReadAsStringAsync().Result;
+            var endpoint = $"https://jsonplaceholder.typicode.com/comments?postId={id}";
 
-                return Ok(result);
+            var response = apiClient.GetResponse(endpoint);
 
-            }
+            var result = response.Content.ReadAsStringAsync().Result;
+
+            return Ok(result);
         }
     }
 }

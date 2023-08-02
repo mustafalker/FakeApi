@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using System.Configuration;
 using System.Data.Entity;
+using System.Resources;
+using System.Security.Policy;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +24,7 @@ builder.Services.AddSwaggerGen();
     }
     catch (Exception ex)
     {
-        Console.WriteLine("Db Patladý");
+        Console.WriteLine("Db Patladý" + ex);
     }
 
 var app = builder.Build();
@@ -41,6 +43,5 @@ app.UseAuthorization();
 
 app.MapControllers();
 app.Run();
-
 
 

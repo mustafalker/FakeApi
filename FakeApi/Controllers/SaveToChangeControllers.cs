@@ -1,4 +1,5 @@
-﻿using FakeApi.Data;
+﻿using FakeApi;
+using FakeApi.Data;
 using FakeApi.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Graph.Models;
@@ -6,7 +7,7 @@ using Newtonsoft.Json;
 using System.Data.Entity;
 using System.Text;
 using System.Xml.Linq;
-using User = FakeApi.Model.User; 
+using User = FakeApi.Model.User;
 
 namespace Savechange.Controllers
 {
@@ -23,28 +24,28 @@ namespace Savechange.Controllers
         [HttpGet("{id:int}")]
         public IActionResult GetPostIdComments(int id)
         {
-            using (var client = new HttpClient())
+
+            var apiClient = ApiClient.Instance;
+
+            var endpoint = $"https://jsonplaceholder.typicode.com/comments?postId={id}";
+
+            var response = apiClient.GetResponse(endpoint);
+
+            if (response.IsSuccessStatusCode)
             {
-                var endpoint = new Uri($"https://jsonplaceholder.typicode.com/comments?postId={id}");
+                var json = response.Content.ReadAsStringAsync().Result;
+                var comments = JsonConvert.DeserializeObject<List<Comment>>(json);
 
-                var result = client.GetAsync(endpoint).Result;
+                _dbContext.Comments.AddRange(comments);
+                _dbContext.SaveChanges();
 
-                if (result.IsSuccessStatusCode)
-                {
-                    var json = result.Content.ReadAsStringAsync().Result;
-                    var comments = JsonConvert.DeserializeObject<List<Comment>>(json);
-
-                        _dbContext.Comments.AddRange(comments);
-                        _dbContext.SaveChanges();
-
-
-                    return Ok("Veriler başarıyla eklendi." + json);
-                }
-                else
-                {
-                    return StatusCode((int)result.StatusCode, "Yorumlar alınamadı.");
-                }
+                return Ok("Veriler başarıyla eklendi." + json);
             }
+            else
+            {
+                return StatusCode((int)response.StatusCode, "Yorumlar alınamadı.");
+            }
+
         }
     }
 }
