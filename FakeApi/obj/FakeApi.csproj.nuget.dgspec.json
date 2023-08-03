@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mustafa.ulker\\Desktop\\Mustafa\\ASP .net core API\\FakeApi\\FakeApi\\FakeApi.csproj": {}
+    "C:\\Users\\mustafa.ulker\\Desktop\\Mustafa\\FakeApi\\FakeApi\\FakeApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mustafa.ulker\\Desktop\\Mustafa\\ASP .net core API\\FakeApi\\FakeApi\\FakeApi.csproj": {
+    "C:\\Users\\mustafa.ulker\\Desktop\\Mustafa\\FakeApi\\FakeApi\\FakeApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mustafa.ulker\\Desktop\\Mustafa\\ASP .net core API\\FakeApi\\FakeApi\\FakeApi.csproj",
+        "projectUniqueName": "C:\\Users\\mustafa.ulker\\Desktop\\Mustafa\\FakeApi\\FakeApi\\FakeApi.csproj",
         "projectName": "FakeApi",
-        "projectPath": "C:\\Users\\mustafa.ulker\\Desktop\\Mustafa\\ASP .net core API\\FakeApi\\FakeApi\\FakeApi.csproj",
+        "projectPath": "C:\\Users\\mustafa.ulker\\Desktop\\Mustafa\\FakeApi\\FakeApi\\FakeApi.csproj",
         "packagesPath": "C:\\Users\\mustafa.ulker\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mustafa.ulker\\Desktop\\Mustafa\\ASP .net core API\\FakeApi\\FakeApi\\obj\\",
+        "outputPath": "C:\\Users\\mustafa.ulker\\Desktop\\Mustafa\\FakeApi\\FakeApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -88,6 +88,26 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
+            },
+            "System.ServiceModel.Duplex": {
+              "target": "Package",
+              "version": "[4.10.*, )"
+            },
+            "System.ServiceModel.Federation": {
+              "target": "Package",
+              "version": "[4.10.*, )"
+            },
+            "System.ServiceModel.Http": {
+              "target": "Package",
+              "version": "[4.10.*, )"
+            },
+            "System.ServiceModel.NetTcp": {
+              "target": "Package",
+              "version": "[4.10.*, )"
+            },
+            "System.ServiceModel.Security": {
+              "target": "Package",
+              "version": "[4.10.*, )"
             }
           },
           "imports": [

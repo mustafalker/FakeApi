@@ -28,7 +28,6 @@ namespace FakeApi.Controllers
 
             return Ok(json);
         }
-
         [HttpGet("typicode.com/comments")]
         public IActionResult GetAllComments()
         {
@@ -42,7 +41,6 @@ namespace FakeApi.Controllers
 
             return Ok(json);
         }
-
         [HttpGet("{id:int}")]
         public IActionResult GetOneUser(int id)
         {
@@ -50,27 +48,24 @@ namespace FakeApi.Controllers
 
             var endpoint = Apiucu.apiUcuPost;
 
-            var newPost = new Model.User();
+            var response = apiClient.GetResponse(endpoint);
 
-            var response = apiClient.PostResponse(endpoint, newPost);
+            var json = response.Content.ReadAsStringAsync().Result;
 
-            var result = response.Content.ReadAsStringAsync().Result;
-
-            return Ok(result);
+            return Ok(json);
         }
-
         [HttpPost("{id:int}")]
         public IActionResult GetPostIdComments(int id)
         {
             var apiClient = ApiClient.Instance;
-
-            var endpoint = $"https://jsonplaceholder.typicode.com/comments?postId={id}";
+                
+            var endpoint = Apiucu.apiUcuPostId + id;
 
             var response = apiClient.GetResponse(endpoint);
 
-            var result = response.Content.ReadAsStringAsync().Result;
+            var json = response.Content.ReadAsStringAsync().Result;
 
-            return Ok(result);
+            return Ok(json);
         }
     }
 }

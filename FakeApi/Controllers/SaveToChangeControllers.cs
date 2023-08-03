@@ -24,10 +24,9 @@ namespace Savechange.Controllers
         [HttpGet("{id:int}")]
         public IActionResult GetPostIdComments(int id)
         {
-
             var apiClient = ApiClient.Instance;
 
-            var endpoint = $"https://jsonplaceholder.typicode.com/comments?postId={id}";
+            var endpoint = Apiucu.apiUcuPostId + id;
 
             var response = apiClient.GetResponse(endpoint);
 

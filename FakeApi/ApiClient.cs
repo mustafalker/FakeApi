@@ -1,6 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Newtonsoft.Json;
 using System.Security.Policy;
 using System.Text;
+using Tavis.UriTemplates;
 
 namespace FakeApi
 {
@@ -14,10 +16,16 @@ namespace FakeApi
             client = new HttpClient();
         }
 
-        public static ApiClient Instance 
+        public static ApiClient Instance
         {
             get => instance;
         }
+
+        //public Endpoint endpoint() 
+        //{
+        //    return GetResponse.
+        //}
+
 
         public HttpResponseMessage GetResponse(string url)
         {
@@ -35,5 +43,6 @@ namespace FakeApi
     {
         public static string apiUcuPost = "https://jsonplaceholder.typicode.com/posts";
         public static string apiUcuComment = "https://jsonplaceholder.typicode.com/posts";
+        public static string apiUcuPostId = "https://jsonplaceholder.typicode.com/comments?postId=";
     }
 }
