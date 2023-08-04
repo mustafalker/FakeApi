@@ -24,11 +24,7 @@ namespace Savechange.Controllers
         [HttpGet("{id:int}")]
         public IActionResult GetPostIdComments(int id)
         {
-            var apiClient = ApiClient.Instance;
-
-            var endpoint = Apiucu.apiUcuPostId + id;
-
-            var response = apiClient.GetResponse(endpoint);
+            var response = ApiClient.Instance.GetResponse(Apiucu.apiUcuPostId + id);
 
             if (response.IsSuccessStatusCode)
             {
@@ -38,13 +34,12 @@ namespace Savechange.Controllers
                 _dbContext.Comments.AddRange(comments);
                 _dbContext.SaveChanges();
 
-                return Ok("Veriler başarıyla eklendi." + json);
+                return Ok("Veriler başarıyla eklendi. " + json);
             }
             else
             {
                 return StatusCode((int)response.StatusCode, "Yorumlar alınamadı.");
             }
-
         }
     }
 }

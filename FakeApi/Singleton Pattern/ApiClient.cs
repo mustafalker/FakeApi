@@ -21,12 +21,6 @@ namespace FakeApi
             get => instance;
         }
 
-        //public Endpoint endpoint() 
-        //{
-        //    return GetResponse.
-        //}
-
-
         public HttpResponseMessage GetResponse(string url)
         {
             return client.GetAsync(url).Result;
@@ -38,11 +32,12 @@ namespace FakeApi
             return client.PostAsync(url, payload).Result;
         }
     }
-
+    #region ApiUçları
     public static class Apiucu
     {
         public static string apiUcuPost = "https://jsonplaceholder.typicode.com/posts";
         public static string apiUcuComment = "https://jsonplaceholder.typicode.com/posts";
         public static string apiUcuPostId = "https://jsonplaceholder.typicode.com/comments?postId=";
-    }
+    } 
+    #endregion
 }

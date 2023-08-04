@@ -16,56 +16,16 @@ namespace FakeApi.Controllers
     public class FakeApiControllers : ControllerBase
     {
         [HttpGet("typicode.com/posts")]
-        public IActionResult GetPosts()
-        {
-            var apiClient = ApiClient.Instance;
+        public IActionResult GetPosts() => Ok(ApiClient.Instance.GetResponse(Apiucu.apiUcuPost).Content.ReadAsStringAsync().Result);
 
-            var endpoint = Apiucu.apiUcuPost;
-
-            var response = apiClient.GetResponse(endpoint);
-
-            var json = response.Content.ReadAsStringAsync().Result;
-
-            return Ok(json);
-        }
         [HttpGet("typicode.com/comments")]
-        public IActionResult GetAllComments()
-        {
-            var apiClient = ApiClient.Instance;
+        public IActionResult GetAllComments() => Ok(ApiClient.Instance.GetResponse(Apiucu.apiUcuComment).Content.ReadAsStringAsync().Result);
 
-            var endpoint = Apiucu.apiUcuComment;
-
-            var response = apiClient.GetResponse(endpoint);
-
-            var json = response.Content.ReadAsStringAsync().Result;
-
-            return Ok(json);
-        }
         [HttpGet("{id:int}")]
-        public IActionResult GetOneUser(int id)
-        {
-            var apiClient = ApiClient.Instance;
+        public IActionResult GetOneUser(int id) => Ok(ApiClient.Instance.GetResponse(Apiucu.apiUcuPost).Content.ReadAsStringAsync().Result);
 
-            var endpoint = Apiucu.apiUcuPost;
-
-            var response = apiClient.GetResponse(endpoint);
-
-            var json = response.Content.ReadAsStringAsync().Result;
-
-            return Ok(json);
-        }
         [HttpPost("{id:int}")]
-        public IActionResult GetPostIdComments(int id)
-        {
-            var apiClient = ApiClient.Instance;
-                
-            var endpoint = Apiucu.apiUcuPostId + id;
+        public IActionResult GetPostIdComments(int id) => Ok(ApiClient.Instance.GetResponse(Apiucu.apiUcuPostId + id).Content.ReadAsStringAsync().Result);   
 
-            var response = apiClient.GetResponse(endpoint);
-
-            var json = response.Content.ReadAsStringAsync().Result;
-
-            return Ok(json);
-        }
     }
 }
