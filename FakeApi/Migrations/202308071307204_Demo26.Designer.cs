@@ -7,13 +7,13 @@ namespace FakeApi.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class Demo14 : IMigrationMetadata
+    public sealed partial class Demo26 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Demo14));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Demo26));
         
         string IMigrationMetadata.Id
         {
-            get { return "202308010652519_Demo14"; }
+            get { return "202308071307204_Demo26"; }
         }
         
         string IMigrationMetadata.Source

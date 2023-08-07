@@ -101,8 +101,6 @@ C:\Users\mustafa.ulker\Desktop\Mustafa\ASP .net core API\FakeApi\FakeApi\bin\Deb
 C:\Users\mustafa.ulker\Desktop\Mustafa\ASP .net core API\FakeApi\FakeApi\obj\Debug\net7.0\FakeApi.Migrations.Demo14.resources
 C:\Users\mustafa.ulker\Desktop\Mustafa\ASP .net core API\FakeApi\FakeApi\obj\Debug\net7.0\FakeApi.csproj.GenerateResource.cache
 C:\Users\mustafa.ulker\Desktop\Mustafa\FakeApi\FakeApi\obj\Debug\net7.0\FakeApi.csproj.AssemblyReference.cache
-C:\Users\mustafa.ulker\Desktop\Mustafa\FakeApi\FakeApi\obj\Debug\net7.0\FakeApi.Migrations.Demo14.resources
-C:\Users\mustafa.ulker\Desktop\Mustafa\FakeApi\FakeApi\obj\Debug\net7.0\FakeApi.csproj.GenerateResource.cache
 C:\Users\mustafa.ulker\Desktop\Mustafa\FakeApi\FakeApi\obj\Debug\net7.0\FakeApi.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\mustafa.ulker\Desktop\Mustafa\FakeApi\FakeApi\obj\Debug\net7.0\FakeApi.AssemblyInfoInputs.cache
 C:\Users\mustafa.ulker\Desktop\Mustafa\FakeApi\FakeApi\obj\Debug\net7.0\FakeApi.AssemblyInfo.cs
@@ -239,3 +237,5 @@ C:\Users\mustafa.ulker\Desktop\Mustafa\FakeApi\FakeApi\bin\Debug\net7.0\ru\Syste
 C:\Users\mustafa.ulker\Desktop\Mustafa\FakeApi\FakeApi\bin\Debug\net7.0\tr\System.ServiceModel.Federation.resources.dll
 C:\Users\mustafa.ulker\Desktop\Mustafa\FakeApi\FakeApi\bin\Debug\net7.0\zh-Hans\System.ServiceModel.Federation.resources.dll
 C:\Users\mustafa.ulker\Desktop\Mustafa\FakeApi\FakeApi\bin\Debug\net7.0\zh-Hant\System.ServiceModel.Federation.resources.dll
+C:\Users\mustafa.ulker\Desktop\Mustafa\FakeApi\FakeApi\obj\Debug\net7.0\FakeApi.Migrations.Demo26.resources
+C:\Users\mustafa.ulker\Desktop\Mustafa\FakeApi\FakeApi\obj\Debug\net7.0\FakeApi.csproj.GenerateResource.cache

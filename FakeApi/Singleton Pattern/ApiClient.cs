@@ -16,10 +16,7 @@ namespace FakeApi
             client = new HttpClient();
         }
 
-        public static ApiClient Instance
-        {
-            get => instance;
-        }
+        public static ApiClient Instance => instance;
 
         public HttpResponseMessage GetResponse(string url)
         {
@@ -30,7 +27,7 @@ namespace FakeApi
         {
             var payload = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
             return client.PostAsync(url, payload).Result;
-        }
+        }                   
     }
     #region ApiUçları
     public static class Apiucu
@@ -38,6 +35,8 @@ namespace FakeApi
         public static string apiUcuPost = "https://jsonplaceholder.typicode.com/posts";
         public static string apiUcuComment = "https://jsonplaceholder.typicode.com/posts";
         public static string apiUcuPostId = "https://jsonplaceholder.typicode.com/comments?postId=";
-    } 
+        public static string apiUcuCommentId = "https://jsonplaceholder.typicode.com/comments";
+
+    }
     #endregion
 }

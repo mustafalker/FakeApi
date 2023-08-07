@@ -1,4 +1,6 @@
+using FakeApi.CommentById.DAL;
 using FakeApi.Data;
+using FakeApi.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using System.Configuration;
@@ -10,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddScoped<IRepository<Comment>, GenericRepository<Comment>>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

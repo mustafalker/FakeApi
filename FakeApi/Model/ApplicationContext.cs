@@ -11,7 +11,7 @@ namespace FakeApi.Model
         public string Body { get; set; }
         public int UserId { get; set; }
     }
-    public class Comment : DbContext
+    public class Comment :DbContext 
     {
         public int id { get; set; }
         public int postId { get; set; }

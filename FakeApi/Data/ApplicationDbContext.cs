@@ -1,12 +1,13 @@
-﻿using FakeApi.Model;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc.ApplicationModels;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using FakeApi.Model;
 
 namespace FakeApi.Data
 {
     public class ApplicationDbContext : DbContext
     {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -15,11 +16,7 @@ namespace FakeApi.Data
             }
         }
 
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base(options) {}
-
-        public virtual DbSet<Comment> Comments { get; set; }
-
-        public virtual DbSet<User> Users { get; set; }
-
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

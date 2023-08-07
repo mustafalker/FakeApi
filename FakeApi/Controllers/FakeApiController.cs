@@ -13,7 +13,7 @@ namespace FakeApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class FakeApiControllers : ControllerBase
+    public class FakeApiControllers :ControllerBase
     {
         [HttpGet("typicode.com/posts")]
         public IActionResult GetPosts() => Ok(ApiClient.Instance.GetResponse(Apiucu.apiUcuPost).Content.ReadAsStringAsync().Result);
@@ -25,7 +25,7 @@ namespace FakeApi.Controllers
         public IActionResult GetOneUser(int id) => Ok(ApiClient.Instance.GetResponse(Apiucu.apiUcuPost).Content.ReadAsStringAsync().Result);
 
         [HttpPost("{id:int}")]
-        public IActionResult GetPostIdComments(int id) => Ok(ApiClient.Instance.GetResponse(Apiucu.apiUcuPostId + id).Content.ReadAsStringAsync().Result);   
+        public IActionResult GetPostIdComments(int id) => Ok(ApiClient.Instance.GetResponse(Apiucu.apiUcuPostId + id).Content.ReadAsStringAsync().Result);
 
     }
 }
