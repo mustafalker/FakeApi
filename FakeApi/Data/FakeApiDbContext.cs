@@ -4,9 +4,9 @@ using FakeApi.Model;
 
 namespace FakeApi.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class FakeApiDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
+        public FakeApiDbContext(DbContextOptions<FakeApiDbContext> options) : base(options) { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

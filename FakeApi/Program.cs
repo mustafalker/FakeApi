@@ -1,45 +1,38 @@
-using FakeApi.CommentById.DAL;
 using FakeApi.Data;
+using FakeApi.GenericRepositoryPattern.CommentByIdRemove.DAL;
+using FakeApi.GenericRepositoryPattern.CommentPut.DAL;
 using FakeApi.Model;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using System.Configuration;
-using System.Data.Entity;
-using System.Resources;
-using System.Security.Policy;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddScoped<IRepository<Comment>, GenericRepository<Comment>>();
+builder.Services.AddScoped<IRemove<Comment>, RemoveComment<Comment>>();
+builder.Services.AddScoped<IUpdate<Comment>, UpdateComment<Comment>>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-    try
-    {
-    builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer
+builder.Services.AddControllers().AddNewtonsoftJson();
+try
+{
+    builder.Services.AddDbContext<FakeApi.Data.FakeApiDbContext>(options => options.UseSqlServer
     (builder.Configuration.GetConnectionString("sqlConnection")));
-
-    //builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    //options.UseSqlServer(builder.Configuration.GetConnectionString("sqlConnection"),
-    //sqlServerOptions => sqlServerOptions.EnableRetryOnFailure(maxRetryCount: 5, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null)));
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine("Db Patladý" + ex);
-    }
+}
+catch (Exception ex)
+{
+    Console.WriteLine("Db Patladý" + ex);
+}
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
-{    
+{
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

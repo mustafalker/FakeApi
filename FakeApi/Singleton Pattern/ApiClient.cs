@@ -36,7 +36,6 @@ namespace FakeApi
         public static string apiUcuComment = "https://jsonplaceholder.typicode.com/posts";
         public static string apiUcuPostId = "https://jsonplaceholder.typicode.com/comments?postId=";
         public static string apiUcuCommentId = "https://jsonplaceholder.typicode.com/comments";
-
     }
     #endregion
 }

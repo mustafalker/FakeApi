@@ -239,3 +239,6 @@ C:\Users\mustafa.ulker\Desktop\Mustafa\FakeApi\FakeApi\bin\Debug\net7.0\zh-Hans\
 C:\Users\mustafa.ulker\Desktop\Mustafa\FakeApi\FakeApi\bin\Debug\net7.0\zh-Hant\System.ServiceModel.Federation.resources.dll
 C:\Users\mustafa.ulker\Desktop\Mustafa\FakeApi\FakeApi\obj\Debug\net7.0\FakeApi.Migrations.Demo26.resources
 C:\Users\mustafa.ulker\Desktop\Mustafa\FakeApi\FakeApi\obj\Debug\net7.0\FakeApi.csproj.GenerateResource.cache
+C:\Users\mustafa.ulker\Desktop\Mustafa\FakeApi\FakeApi\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\mustafa.ulker\Desktop\Mustafa\FakeApi\FakeApi\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\mustafa.ulker\Desktop\Mustafa\FakeApi\FakeApi\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
