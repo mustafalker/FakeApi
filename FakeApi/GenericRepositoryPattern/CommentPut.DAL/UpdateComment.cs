@@ -14,6 +14,11 @@ namespace FakeApi.GenericRepositoryPattern.CommentPut.DAL
             _dbContext = dbContext; 
         }
 
+        public IEnumerable<Comment> GetAll()
+        {
+            return _dbContext.Set<Comment>().ToList();
+        }
+
         public T GetById(int id)
         {
             return _dbContext.Set<T>().Find(id);

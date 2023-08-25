@@ -31,6 +31,13 @@ namespace FakeApi.Controllers
 
             return Ok(newComment);
         }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<Comment>> GetAllComments()
+        {
+            var comments = _dbContext.Comments.ToList();
+            return Ok(comments);
+        }
     }
 }
 

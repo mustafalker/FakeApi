@@ -16,8 +16,8 @@ namespace FakeApi.Controllers
             _commentRepository = commentRepository;
         }
 
-        [HttpPatch("{id}")]
-        public IActionResult UpdateComment(int id, [FromBody] JsonPatchDocument<Comment> updatedComment)
+        [HttpPut("{id}")]
+        public IActionResult UpdateComment(int id, [FromBody] Comment updatedComment)
         {
             var existingComment = _commentRepository.GetById(id);
 
@@ -25,19 +25,37 @@ namespace FakeApi.Controllers
             {
                 return NotFound();
             }
-
-            updatedComment.ApplyTo(existingComment);
+            existingComment.Name = updatedComment.Name;
+            existingComment.Email = updatedComment.Email;
+            existingComment.Body = updatedComment.Body;
 
             _commentRepository.Update(existingComment);
 
-            return Ok($"Yorum (ID: {id}) başarıyla güncellendi.");
+            return Ok(new { message = $"Yorum (ID: {id}) başarıyla güncellendi." });
+        }
+        [HttpGet("{id}")]
+        public IActionResult GetCommentById(int id)
+        {
+            Comment comment = _commentRepository.GetById(id);
+
+            if (comment == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(comment);
+        }
+        [HttpGet]
+        public IActionResult GetComments()
+        {
+            IEnumerable<Comment> comments = _commentRepository.GetAll();
+
+            if (comments == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(comments);
         }
     }
 }
-#region Programın Bodysi Yani Verileri Update Etmek İsterken Body Kısmına Bu Body yi Girmemiz Lazım  
-//[
-//  { "op": "replace", "path": "/Name", "value": "Yeni Ad" },
-//  { "op": "replace", "path": "/Email", "value": "yeni email" },
-//  { "op": "replace", "path": "/Body", "value": "Yeni yorum içeriği" }
-//]
-#endregion

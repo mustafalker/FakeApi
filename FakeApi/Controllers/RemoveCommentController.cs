@@ -47,5 +47,12 @@ namespace FakeApi.Controllers
             _commentRepository.RemoveAll();
             return Ok($"Tüm yorumlar kaldırıldı");
         }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<Comment>> GetAllComments()
+        {
+            var comments = _commentRepository.GetAll().ToList();
+            return Ok(comments);
+        }
     }
 }
